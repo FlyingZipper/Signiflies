@@ -14,11 +14,9 @@ export const Card = ({id, gameDate, location, players, opponent, currentUser} : 
   const [expanded, setExpanded] = useState(false)
   const [isPending, startTransition] = useTransition()
   const [loading, setLoading] = useState(false)
-  const [isRegistered, setIsRegistered] = useState(players.find((player) => player?.id === currentUser?.id))
-  const [registeredPlayers, setRegisteredPlayers] = useState(players)
+  const [isRegistered, setIsRegistered] = useState(() => players.find((player) => player?.id === currentUser?.id))
+  const [registeredPlayers, setRegisteredPlayers] = useState(() => players)
   const isEligibleRegister = validateEligibleRegister({email: currentUser?.email, gameDate})
-
-  console.log()
 
   const registerPlayer = async () => {
     setLoading(true)
@@ -111,7 +109,12 @@ export const Card = ({id, gameDate, location, players, opponent, currentUser} : 
               </svg>
             </Button>
           )}
-        </div> : <div>{currentUser ? 'You must wait 24 hours before registering for the game.' : 'Login to register'}</div>}
+        </div> : (<div>{
+          registeredPlayers.length > 10 ? 'The game has reached its maximum number of players.' :
+          (currentUser ? 
+            'You must wait 24 hours before registering for the game.' : 
+              'Login to register.')
+            }</div>)}
       </div>
       <div className={styles.Divider} />
       <div className={styles.Expander}  onClick={() => setExpanded(!expanded)} >
