@@ -17,7 +17,7 @@ export function CardGrid() {
   const currentDate = new Date()
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/games')
+    fetch('/api/games')
       .then((res) => res.json())
       .then((data) => {
 

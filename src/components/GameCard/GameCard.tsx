@@ -22,7 +22,7 @@ export const Card = ({id, gameDate, location, players, opponent, currentUser} : 
 
   const registerPlayer = async () => {
     setLoading(true)
-    fetch('http://localhost:3000/api/games', {
+    fetch('/api/games', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ export const Card = ({id, gameDate, location, players, opponent, currentUser} : 
 
   const unregisterPlayer = async () => {
     setLoading(true)
-    fetch('http://localhost:3000/api/games', {
+    fetch('/api/games', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
