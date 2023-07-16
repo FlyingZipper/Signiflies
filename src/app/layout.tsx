@@ -14,8 +14,10 @@ export default function RootLayout({children,}: { children: React.ReactNode,}) {
     <html lang="en">
       <body className={`${inter.className} bg-gradient`}>
         <SessionProvider >
-          <Header />
-          {children}
+          <div className='container' >
+            <Header />
+            {children}
+          </div>
         </SessionProvider>
       </body>
     </html>

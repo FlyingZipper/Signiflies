@@ -23,7 +23,11 @@
 }
 
 .PlayerCount {
+    display: flex;
+}
 
+.PlayerCountMobile {
+    display: none;
 }
 
 .Date {
@@ -76,5 +80,19 @@
     align-items: center;
     &:hover {
         cursor: pointer;
+    }
+}
+
+@media (max-width: 1024px) {
+    .Layout {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .PlayerCount {
+        display: none;
+    }
+    
+    .PlayerCountMobile {
+        display: flex;
     }
 }

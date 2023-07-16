@@ -95,7 +95,8 @@ export const Card = ({id, gameDate, location, players, opponent, currentUser} : 
         <h3 className={styles.Heading} >{opponent}</h3>
         <p>{gameDate.toDateString()} at {gameDate.getHours()}:00</p>
         <Link href={locationUrl}>{location}</Link>
-        <p>{registeredPlayers.length}</p>
+        <p className={styles.PlayerCount} >{registeredPlayers.length}</p>
+        <p className={styles.PlayerCountMobile} >{`Player Count: ${registeredPlayers.length}`}</p>
         {isEligibleRegister ? <div className={styles.ButtonLayout} >
           {loading ? <BounceLoader size={32} color='#000' /> : !isRegistered ? (
             <Button outlineBlack rounded callback={() => registerPlayer()} >

@@ -109,3 +109,9 @@ a {
 .bg-gradient {
   background: radial-gradient(ellipse at center, #242f3b 0%, #0c0c0c 100%);
 }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}

@@ -11,3 +11,10 @@
     }
 
 }
+
+// media query for mobile
+@media (max-width: 1024px) {
+    .Layout {
+        display: none;
+    }
+}
