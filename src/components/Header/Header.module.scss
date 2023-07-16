@@ -1,0 +1,30 @@
+.Layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 0;
+}
+
+.ButtonWrapper {
+    display: flex;
+    gap: 16px;
+}
+
+.SignInLayout {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.ProfileLayout {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.875rem;
+}
+
+.ProfileImage {
+    border-radius: 50%;
+}

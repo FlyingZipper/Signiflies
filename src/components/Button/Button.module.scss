@@ -1,0 +1,66 @@
+.Button {
+    color: #fff;
+    background-color: #111;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 8px 16px;
+    font-weight: 600;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
+
+.ButtonRed {
+    color: #fff;
+    background-color: #872f2f;
+}
+
+.ButtonGreen {
+    color: #fff;
+    background-color: #2f872f;
+}
+
+.ButtonWhite {
+    color: #111;
+    background-color: #fff;
+}
+
+.ButtonOutline {
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.ButtonOutlineBlack {
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #000;
+    &:hover {
+        color: #2f872f;
+        border-color: #2f872f;
+    }
+}
+
+.ButtonRounded {
+    border-radius: 50%;
+    padding: 4px;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ButtonDisabled {
+    &:hover {
+        cursor: not-allowed;
+    }
+}
+
+.ButtonFaded {
+    opacity: 0.5;
+}

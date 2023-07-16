@@ -1,0 +1,50 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider          = "postgresql"
+    url               = env("POSTGRES_PRISMA_URL") // uses connection pooling
+    directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+    shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+}
+
+model User {
+    id String @id @default(cuid())
+
+    email     String   @unique
+    name      String?
+    password  String?
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    games GameUser[]
+
+    @@map(name: "user")
+}
+
+model Game {
+    id String @id @default(cuid())
+
+    opponent String?
+    gameDate DateTime?
+    location String?
+
+    players GameUser[]
+
+    @@map(name: "game")
+}
+
+model GameUser {
+    game   Game   @relation(fields: [gameId], references: [id])
+    gameId String
+
+    user   User   @relation(fields: [userId], references: [id])
+    userId String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@id([gameId, userId])
+    @@map(name: "game_user")
+}

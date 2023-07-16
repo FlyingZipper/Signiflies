@@ -1,0 +1,17 @@
+.Layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.Container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.Heading {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    margin-bottom: 64px;
+}
