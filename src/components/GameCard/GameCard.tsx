@@ -124,7 +124,7 @@ export const Card = ({id, gameDate, location, players, opponent, currentUser} : 
         }
       </div>
       {expanded && <div className={styles.PlayerList}  >
-        {registeredPlayers && registeredPlayers.map((player) => <p className={styles.Player} >{player.name}</p>)}
+        {registeredPlayers && registeredPlayers.map((player) => <p key={player.id} className={styles.Player} >{player.name}</p>)}
       </div>}
   </div>
 )
